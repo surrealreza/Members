@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h2>{{ object.title }}</h2>
+  <h3>Members</h3>
+  <ul>
+    {% for member in object.get_members %}
+      <li>
+        <p>Name:
+          {{ member.name }}</p>
+        <p>Post:
+          {{ member.post }}</p>
+        <p>Shares:
+          {{ member.shares }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+  {% for line in object.get_comment %}
+    <p>
+      {{ line }}</p>
+  {% endfor %}
+{% endblock %}
